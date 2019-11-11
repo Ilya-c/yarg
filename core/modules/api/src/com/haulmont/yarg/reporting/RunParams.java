@@ -30,6 +30,7 @@ public class RunParams {
     protected ReportTemplate reportTemplate;
     protected ReportOutputType outputType;
     protected Map<String, Object> params = new HashMap<String, Object>();
+    protected String outputNamePattern;
 
     public RunParams(Report report) {
         this.report = report;
@@ -74,6 +75,14 @@ public class RunParams {
     }
 
     /**
+     * Adds report
+     */
+    public RunParams report(Report report) {
+        this.report = report;
+        return this;
+    }
+
+    /**
      * Add single parameter
      */
     public RunParams param(String key, Object value) {
@@ -87,5 +96,33 @@ public class RunParams {
     public RunParams output(ReportOutputType outputType) {
         this.outputType = outputType;
         return this;
+    }
+
+    /**
+     * Add output name pattern
+     */
+    public RunParams outputNamePattern(String outputNamePattern) {
+        this.outputNamePattern = outputNamePattern;
+        return this;
+    }
+
+    public Report getReport() {
+        return report;
+    }
+
+    public ReportTemplate getReportTemplate() {
+        return reportTemplate;
+    }
+
+    public ReportOutputType getOutputType() {
+        return outputType;
+    }
+
+    public Map<String, Object> getParams() {
+        return params;
+    }
+
+    public String getOutputNamePattern() {
+        return outputNamePattern;
     }
 }
