@@ -19,13 +19,14 @@ import com.haulmont.yarg.structure.Report;
 import com.haulmont.yarg.structure.ReportOutputType;
 import com.haulmont.yarg.structure.ReportTemplate;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Describes parameters necessary for report run
  */
-public class RunParams {
+public class RunParams implements Serializable {
     protected Report report;
     protected ReportTemplate reportTemplate;
     protected ReportOutputType outputType;
@@ -78,6 +79,9 @@ public class RunParams {
      * Adds report
      */
     public RunParams report(Report report) {
+        if (report == null) {
+            throw new NullPointerException("\"report\" parameter can not be null");
+        }
         this.report = report;
         return this;
     }
