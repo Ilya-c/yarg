@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * Describes parameters necessary for report run
  */
-public class RunParams implements Serializable {
+public class RunParams {
     protected Report report;
     protected ReportTemplate reportTemplate;
     protected ReportOutputType outputType;
