@@ -76,17 +76,6 @@ public class RunParams implements Serializable {
     }
 
     /**
-     * Adds report
-     */
-    public RunParams report(Report report) {
-        if (report == null) {
-            throw new NullPointerException("\"report\" parameter can not be null");
-        }
-        this.report = report;
-        return this;
-    }
-
-    /**
      * Add single parameter
      */
     public RunParams param(String key, Object value) {
@@ -108,25 +97,5 @@ public class RunParams implements Serializable {
     public RunParams outputNamePattern(String outputNamePattern) {
         this.outputNamePattern = outputNamePattern;
         return this;
-    }
-
-    public Report getReport() {
-        return report;
-    }
-
-    public ReportTemplate getReportTemplate() {
-        return reportTemplate;
-    }
-
-    public ReportOutputType getOutputType() {
-        return outputType;
-    }
-
-    public Map<String, Object> getParams() {
-        return params;
-    }
-
-    public String getOutputNamePattern() {
-        return outputNamePattern;
     }
 }
